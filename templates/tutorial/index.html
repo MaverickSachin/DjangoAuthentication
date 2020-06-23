@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <strong>Hello, world! Welcome to the Django Authentication Tutorial!</strong>
+    Hello,
+    <strong>
+        {% if user.is_authenticated %}
+            {{ user.username }}
+        {% else %}
+            Muchacho
+        {% endif %}
+    </strong>!
+    <hr>
+    <p>Welcome to the Django Authentication Tutorial!</p>
 {% endblock content %}
