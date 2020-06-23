@@ -26,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # user defined apps
+    # third-party
+    'widget_tweaks',
+
+    # user-defined
     'tutorial.apps.TutorialConfig',
     'accounts.apps.AccountsConfig',
     'settings.apps.SettingsConfig',
@@ -115,3 +118,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+LOGIN_REDIRECT_URL = 'tutorial:index'
+LOGOUT_REDIRECT_URL = 'tutorial:index'
+
+LOGIN_URL = 'accounts:login'
